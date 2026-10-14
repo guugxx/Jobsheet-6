@@ -201,7 +201,13 @@ footer {
     overflow-x: auto;
 }
 
-/* ===== Hamburger Menu (JS-driven) ===== */
+/* ===== Hamburger Menu ===== */
+/* Checkbox selalu disembunyikan (di desktop maupun mobile) */
+.nav-toggle {
+    display: none;
+}
+
+/* Tombol/label hamburger: tersembunyi di desktop, tampil di mobile */
 .nav-toggle-label {
     display: none;
     font-size: 1.6rem;
@@ -222,6 +228,13 @@ footer {
 /* ===== Kolom Pencarian ===== */
 .search-box {
     margin-bottom: 1rem;
+}
+
+.search-box label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+    color: #444;
 }
 
 .search-box input {
@@ -258,7 +271,9 @@ footer {
         margin-top: 1rem;
     }
 
-    header nav.nav-open {
+    /* Menu terbuka: via JS (class nav-open) ATAU via checkbox */
+    header nav.nav-open,
+    .nav-toggle:checked ~ nav {
         display: block;
     }
 
